@@ -2,6 +2,10 @@ import UIKit
 
 final class MovieQuizViewController: UIViewController {
     
+    // MARK: - Outlet
+    @IBOutlet weak var indexLabel: UILabel!
+    @IBOutlet weak var previewImage: UIImageView!
+    @IBOutlet weak var questionLabel: UILabel!
     
     
     // MARK: - Lifecycle
@@ -9,7 +13,11 @@ final class MovieQuizViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    
+    // MARK: - Action methods
+    @IBAction func noButton(_ sender: Any) {
+    }
+    @IBAction func yesButton(_ sender: Any) {
+    }
     
 }
 
