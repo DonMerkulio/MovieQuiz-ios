@@ -118,6 +118,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="buttonNo" destination="2ZQ-QT-x9N" id="oEF-a2-KRo"/>
+                        <outlet property="buttonYes" destination="hRL-7q-MEO" id="Nna-Gr-m45"/>
                         <outlet property="indexLabel" destination="T39-W4-Qws" id="b4P-jp-3cv"/>
                         <outlet property="previewImage" destination="NE2-Rk-e62" id="tvk-ml-ASr"/>
                         <outlet property="questionLabel" destination="bEh-jj-ig8" id="Bx0-aG-Ei5"/>
