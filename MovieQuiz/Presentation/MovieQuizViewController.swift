@@ -1,11 +1,54 @@
 import UIKit
 
 final class MovieQuizViewController: UIViewController {
+    // массив вопросов
+    private let questions: [QuizQuestion] = [
+        QuizQuestion(
+            image: "The Godfather",
+            text: "Рейтинг этого фильма больше чем 6?",
+            correctAnswer: true),
+        QuizQuestion(
+            image: "The Dark Knight",
+            text: "Рейтинг этого фильма больше чем 6?",
+            correctAnswer: true),
+        QuizQuestion(
+            image: "Kill Bill",
+            text: "Рейтинг этого фильма больше чем 6?",
+            correctAnswer: true),
+        QuizQuestion(
+            image: "The Avengers",
+            text: "Рейтинг этого фильма больше чем 6?",
+            correctAnswer: true),
+        QuizQuestion(
+            image: "Deadpool",
+            text: "Рейтинг этого фильма больше чем 6?",
+            correctAnswer: true),
+        QuizQuestion(
+            image: "The Green Knight",
+            text: "Рейтинг этого фильма больше чем 6?",
+            correctAnswer: true),
+        QuizQuestion(
+            image: "Old",
+            text: "Рейтинг этого фильма больше чем 6?",
+            correctAnswer: false),
+        QuizQuestion(
+            image: "The Ice Age Adventures of Buck Wild",
+            text: "Рейтинг этого фильма больше чем 6?",
+            correctAnswer: false),
+        QuizQuestion(
+            image: "Tesla",
+            text: "Рейтинг этого фильма больше чем 6?",
+            correctAnswer: false),
+        QuizQuestion(
+            image: "Vivarium",
+            text: "Рейтинг этого фильма больше чем 6?",
+            correctAnswer: false)
+    ]
     
     // MARK: - Outlet
-    @IBOutlet weak var indexLabel: UILabel!
-    @IBOutlet weak var previewImage: UIImageView!
-    @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet private weak var indexLabel: UILabel!
+    @IBOutlet private weak var previewImage: UIImageView!
+    @IBOutlet private weak var questionLabel: UILabel!
     
     
     // MARK: - Lifecycle
@@ -14,9 +57,9 @@ final class MovieQuizViewController: UIViewController {
     }
     
     // MARK: - Action methods
-    @IBAction func noButton(_ sender: Any) {
+    @IBAction private func noButton(_ sender: Any) {
     }
-    @IBAction func yesButton(_ sender: Any) {
+    @IBAction private func yesButton(_ sender: Any) {
     }
     
 }
