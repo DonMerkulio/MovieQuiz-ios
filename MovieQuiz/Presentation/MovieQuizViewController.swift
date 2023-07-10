@@ -78,9 +78,9 @@ final class MovieQuizViewController: UIViewController {
     }
 
     private func show(quiz result: QuizResultsViewModel) {
-        let alert = UIAlertController(title: result.title, // заголовок всплывающего окна
+        let alert = UIAlertController(title: result.title,
                                       message: result.text,
-                                      preferredStyle: .alert) // preferredStyle может быть .alert или .actionSheet
+                                      preferredStyle: .alert)
         
         let action = UIAlertAction(title: result.buttonText, style: .default) { _ in
             self.currentQuestionIndex = 0
