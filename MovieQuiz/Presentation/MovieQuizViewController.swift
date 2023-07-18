@@ -11,12 +11,12 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
     private var statisticService: StatisticService?
     
     // MARK: - Outlet
-    @IBOutlet private weak var indexLabel: UILabel!
-    @IBOutlet private weak var previewImage: UIImageView!
-    @IBOutlet private weak var questionLabel: UILabel!
-    @IBOutlet weak var buttonNo: UIButton!
-    @IBOutlet weak var buttonYes: UIButton!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak private var indexLabel: UILabel!
+    @IBOutlet weak private var previewImage: UIImageView!
+    @IBOutlet weak private var questionLabel: UILabel!
+    @IBOutlet weak private var buttonNo: UIButton!
+    @IBOutlet weak private var buttonYes: UIButton!
+    @IBOutlet weak private var activityIndicator: UIActivityIndicatorView!
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
