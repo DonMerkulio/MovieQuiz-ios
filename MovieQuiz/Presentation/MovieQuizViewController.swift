@@ -29,6 +29,10 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
         enableButton(is: true)
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     // MARK: - Methods
     private func convert(model: QuizQuestion) -> QuizStepViewModel {
         return QuizStepViewModel(
@@ -51,7 +55,8 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
                 [weak self] in guard let self = self else { return }
                 self.currentQuestionIndex = 0
                 self.correctAnswers = 0
-                self.questionFactory?.requestNextQuestion()
+                self.showLoadingIndicator()
+                self.questionFactory?.loadData()
                 self.enableButton(is: true)
             }
         alertPresenter?.showAlert(alertModel)
