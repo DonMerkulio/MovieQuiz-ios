@@ -107,17 +107,24 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="EcP-M0-Rnq">
+                                <rect key="frame" x="196.66666666666666" y="447.66666666666669" width="37" height="37"/>
+                                <color key="color" name="YP Black"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="YP Black"/>
                         <constraints>
+                            <constraint firstItem="EcP-M0-Rnq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7rE-hp-rAQ"/>
                             <constraint firstItem="75d-CC-P4Y" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="Nur-Nb-SUe"/>
+                            <constraint firstItem="EcP-M0-Rnq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="UI8-ti-XVQ"/>
                             <constraint firstItem="75d-CC-P4Y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="dro-iL-Epg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="75d-CC-P4Y" secondAttribute="bottom" id="erm-P3-3rC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="75d-CC-P4Y" secondAttribute="trailing" constant="20" id="weo-8c-yEl"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="EcP-M0-Rnq" id="TZy-0h-SJm"/>
                         <outlet property="buttonNo" destination="2ZQ-QT-x9N" id="oEF-a2-KRo"/>
                         <outlet property="buttonYes" destination="hRL-7q-MEO" id="Nna-Gr-m45"/>
                         <outlet property="indexLabel" destination="T39-W4-Qws" id="b4P-jp-3cv"/>
