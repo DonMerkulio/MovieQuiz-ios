@@ -20,7 +20,7 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        presenter.viewController = self
         statisticService = StatisticServiceImplementation()
         questionFactory = QuestionFactory(moviesLoader: MoviesLoader(), delegate: self)
         showLoadingIndicator()
@@ -60,7 +60,7 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
         buttonYes.isEnabled = enable
     }
     
-    private func showAnswerResult(isCorrect: Bool) {
+    func showAnswerResult(isCorrect: Bool) {
         if isCorrect {
             correctAnswers += 1
         }
@@ -139,20 +139,15 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
     // MARK: - Action methods
     @IBAction private func noButton(_ sender: Any) {
         enableButton(is: false)
-        let givenAnswer = false
-        guard let currentQuestion = currentQuestion else {
-            return
-        }
-        showAnswerResult(isCorrect: currentQuestion.correctAnswer == givenAnswer)
+        presenter.currentQuestion = currentQuestion
+        presenter.noButton()
     }
     
     @IBAction private func yesButton(_ sender: Any) {
         enableButton(is: false)
         let givenAnswer = true
-        guard let currentQuestion = currentQuestion else {
-            return
-        }
-        showAnswerResult(isCorrect: currentQuestion.correctAnswer == givenAnswer)
+        presenter.currentQuestion = currentQuestion
+        presenter.noButton()
     }
 }
 
