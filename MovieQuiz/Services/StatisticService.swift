@@ -17,6 +17,7 @@ protocol StatisticService {
 }
 
 
+
 final class StatisticServiceImplementation: StatisticService {
     
     private let userDefaults = UserDefaults.standard
