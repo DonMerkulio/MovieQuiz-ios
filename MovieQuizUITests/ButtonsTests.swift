@@ -1,13 +1,13 @@
 //
-//  MovieQuizUITests.swift
+//  MovieQuizUITestsLaunchTests.swift
 //  MovieQuizUITests
 //
-//  Created by Александр Меркулов on 20.07.23.
+//  Created by Александр Меркулов on 24.07.23.
 //
 
 import XCTest
 
-final class MovieQuizUITests: XCTestCase {
+final class ButtonsUITests: XCTestCase {
     
     var app: XCUIApplication!
 
@@ -50,23 +50,12 @@ final class MovieQuizUITests: XCTestCase {
         
     }
     
-    func testAlertGameFinish() {
-        sleep(2)
-        for _ in 1...10 {
-            app.buttons["Yes"].tap()
-            sleep(1)
-        }
-        let alert = app.alerts["Этот раунд окончен!"]
-        XCTAssertTrue(alert.exists)
-        XCTAssertTrue(alert.label == "Этот раунд окончен!")
-        XCTAssertTrue(alert.buttons.firstMatch.label == "Сыграть ещё раз")
-    }
-    
+
     func testAlertButtonPlayAgain(){
         sleep(2)
         for _ in 1...10 {
             app.buttons["Yes"].tap()
-            sleep(1)
+            sleep(2)
         }
         let alert = app.alerts["Этот раунд окончен!"]
         alert.buttons.firstMatch.tap()

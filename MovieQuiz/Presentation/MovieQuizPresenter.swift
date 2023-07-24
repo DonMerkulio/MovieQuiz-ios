@@ -8,20 +8,21 @@
 import Foundation
 import UIKit
 
-class MovieQuizPresenter: QuestionFactoryDelegate {
+
+final class MovieQuizPresenter: QuestionFactoryDelegate {
     private let questionsAmount: Int = 10
     private var currentQuestionIndex = 0
     private var correctAnswers = 0
     private var currentQuestion: QuizQuestion?
     private var statisticService: StatisticService?
 
-    weak private var viewController: MovieQuizViewController?
+    weak private var viewController: MovieQuizViewControllerProtocol?
     
     var questionFactory: QuestionFactoryProtocol?
     
      
     
-    init(viewController: MovieQuizViewController) {
+    init(viewController: MovieQuizViewControllerProtocol) {
         self.viewController = viewController
         self.statisticService = StatisticServiceImplementation()
         self.questionFactory = QuestionFactory(moviesLoader: MoviesLoader(), delegate: self)
@@ -43,7 +44,7 @@ class MovieQuizPresenter: QuestionFactoryDelegate {
         currentQuestionIndex += 1
     }
     
-    private func convert(model: QuizQuestion) -> QuizStepViewModel {
+    func convert(model: QuizQuestion) -> QuizStepViewModel {
         return QuizStepViewModel(
                 image: UIImage(data: model.image) ?? UIImage(),
                 question: model.text,
